@@ -39,6 +39,7 @@ namespace BankAccountWithTests
         /// <summary>
         /// Deposits a positive amount of money into the account
         /// and returns the new Balance
+        /// <see cref="Balance""/>
         /// </summary>
         /// <exception cref="ArgumentException">Thrown when amt is 0 or less</exception>
         /// <param name="amt">Amount of money being deposited into the account</param>
