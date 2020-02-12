@@ -10,9 +10,14 @@ namespace BankAccountWithTests
     {
         private string accountNumber;
 
-        public BankAccount(string accNum)
+        public BankAccount(string accNum) : this(accNum, 0.00)
+        {
+        }
+
+        public BankAccount(string accNum, double initialBal)
         {
             AccountNumber = accNum;
+            Balance = initialBal;
         }
 
         public string AccountNumber 
@@ -53,5 +58,15 @@ namespace BankAccountWithTests
             return Balance;
         }
 
+
+        public void Withdraw(double amt)
+        {
+            if(amt >= Balance)
+            {
+                throw new ArgumentException("You must have a higher balance then the amount being withdrawed");
+            }
+
+            Balance -= amt;
+        }
     }
 }
